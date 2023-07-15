@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/features\/delete-username-StatusControl[1:9]","start":1689430931321,"end":1689430932581,"title":"src\/test\/java\/features\/delete-username-StatusControl[1:9] 17:22:11.321-17:22:12.581 Delete Username"},{"id":2,"group":1,"content":"src\/test\/java\/features\/delete-username-StatusControl[2:17]","start":1689430932598,"end":1689430933074,"title":"src\/test\/java\/features\/delete-username-StatusControl[2:17] 17:22:12.598-17:22:13.074 Delete Username2","className":"failed"},{"id":3,"group":1,"content":"src\/test\/java\/features\/delete-username-StatusControl[3:25]","start":1689430933081,"end":1689430933523,"title":"src\/test\/java\/features\/delete-username-StatusControl[3:25] 17:22:13.081-17:22:13.523 Delete Username3"},{"id":4,"group":1,"content":"src\/test\/java\/features\/get-Username-StatusControl[1:8]","start":1689430934465,"end":1689430934930,"title":"src\/test\/java\/features\/get-Username-StatusControl[1:8] 17:22:14.465-17:22:14.930 Not Get Username"},{"id":5,"group":1,"content":"src\/test\/java\/features\/get-Username-StatusControl[2:17]","start":1689430934940,"end":1689430935399,"title":"src\/test\/java\/features\/get-Username-StatusControl[2:17] 17:22:14.940-17:22:15.399 Get Username","className":"failed"},{"id":6,"group":1,"content":"src\/test\/java\/features\/get-Username-StatusControl[3:25]","start":1689430935404,"end":1689430935851,"title":"src\/test\/java\/features\/get-Username-StatusControl[3:25] 17:22:15.404-17:22:15.851 Get Username2","className":"failed"},{"id":7,"group":1,"content":"src\/test\/java\/features\/post-Username-StatusControl[1:9]","start":1689430936074,"end":1689430936669,"title":"src\/test\/java\/features\/post-Username-StatusControl[1:9] 17:22:16.074-17:22:16.669 Create User"},{"id":8,"group":1,"content":"src\/test\/java\/features\/post-Username-StatusControl[2:30]","start":1689430936673,"end":1689430937136,"title":"src\/test\/java\/features\/post-Username-StatusControl[2:30] 17:22:16.673-17:22:17.136 Create User2"},{"id":9,"group":1,"content":"src\/test\/java\/features\/put-Username-StatusControl[1:9]","start":1689430937333,"end":1689430937802,"title":"src\/test\/java\/features\/put-Username-StatusControl[1:9] 17:22:17.333-17:22:17.802 User password update"},{"id":10,"group":1,"content":"src\/test\/java\/features\/put-Username-StatusControl[2:29]","start":1689430937808,"end":1689430938255,"title":"src\/test\/java\/features\/put-Username-StatusControl[2:29] 17:22:17.808-17:22:18.255 User username update"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
